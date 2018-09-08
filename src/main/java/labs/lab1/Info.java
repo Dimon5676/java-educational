@@ -13,10 +13,10 @@ public class Info {
         String teacherLastName = "Владимирова";
         String groupCode = "ИВТ/б-11-о";
         int variant = 12;
-        int longPool = 69;
-        int widthPool = 900;
+        int longPool = 341;
+        int widthPool = 91;
         String fullName = fullName(firstName, middleName, lastName);
-
+        int result = longPool * widthPool;
         System.out.println("Программу выполнил:");
         System.out.println(fullName);
         System.out.println("Шифр группы: " + groupCode);
@@ -24,7 +24,7 @@ public class Info {
         System.out.println("Вариант: " + variant);
         System.out.println("Длина бассейна: " + longPool);
         System.out.println("Ширина бассейна: " + widthPool);
-        System.out.println("Площадь бассейна: " + longPool * widthPool);
+        System.out.println("Площадь бассейна: " + result);
         System.out.println("Проверил: \n" + fullName(teacherFirstName, teacherMiddleName, teacherLastName));
     }
 
