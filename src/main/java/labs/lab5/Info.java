@@ -8,7 +8,7 @@ public class Info {
         char d = '%';
 
         //ternary conditional operation
-        char a = Character.isLetter(c) && (Character.toLowerCase(c) == 'a' && d == '%' ? Character.toUpperCase(c) : d;
+        char a = Character.isLetter(c) && Character.toLowerCase(c) == 'a' && d == '%' ? Character.toUpperCase(c) : d;
         //print chars and codes
         System.out.println(a + " " +  c + " " + d);
         System.out.println((int)a + " " +(int)c + " " + (int)d);
