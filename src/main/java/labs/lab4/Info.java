@@ -6,8 +6,8 @@ public class Info {
         int var = 12%14;
         System.out.printf("Вариант: %d\n", var);
 
-        float r = 0.12f;
-        int z = 10;
+        float r = 8.3f;
+        int z = -116;
 
         double t = Math.sin(Math.PI*r)/(Math.pow(10, 3)+r*z);
 
