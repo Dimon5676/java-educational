@@ -14,5 +14,7 @@ public class Main{
         list.addToN(1, 3123123);
         list.move(8, 2);
         list.show();
+
+        list.build(list, 4, 10);
     }
 }

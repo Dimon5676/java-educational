@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,9 +42,7 @@ public class PList {
         }
     }
 
-    /**
-     * Removes the first element of the list
-     */
+    /** Remove the first element of the list */
     void removeFromBegin() {
         list.remove(0);
         System.out.println("First element of the list has been removed");
@@ -58,16 +57,14 @@ public class PList {
         System.out.println("Element with index " + n + " has been removed");
     }
 
-    /**
-     * Removes last element from the list
-     */
+    /** Remove last element from the list */
     void removeFromEnd () {
         list.remove(list.size()-1);
         System.out.println("Last element of the list has been removed");
     }
 
     /**
-     * Moves element with index 'k' back on 'n' positions
+     * Move element with index 'k' back on 'n' positions
      * @param k index of element
      * @param n quantity of positions
      */
@@ -78,11 +75,46 @@ public class PList {
     }
 
     /**
-     * Displays all elements of the list
+     *  Build and displays two lists that contain values in range
+     *  from n to m and don't contain values from that range from base list
+     * @param list base list
+     * @param n from value
+     * @param m til value
      */
+    void build(PList list, int n, int m) {
+        //list that doesn't contain elements from range
+        PList list1 = new PList();
+        //list that contains elements from range
+        PList list2 = new PList();
+        //rage
+        List<Integer> range = new ArrayList<Integer>();
+        for (int i = n; i <= m; i++) {
+            range.add(i);
+        }
+        //check if current element belongs to range
+        for (int i = 0; i < list.length(); i++){
+            if (range.contains(valueOf(i))) {
+                list2.addToEnd(list.valueOf(i));
+            } else {
+                list1.addToEnd(list.valueOf(i));
+            }
+        }
+        //print two lists
+        System.out.printf("List don't contain values in range from %d to %d\n", n, m);
+        list1.show();
+        System.out.printf("List contains values in range from %d to %d\n", n, m);
+        list2.show();
+    }
+    /** Display all elements of the list */
     void show() {
         for (int i:list) {
             System.out.println(i);
         }
+    }
+    int valueOf(int n) {
+        return list.get(n);
+    }
+    int length() {
+        return list.size();
     }
 }
