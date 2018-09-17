@@ -1,9 +1,9 @@
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class PList {
-    List<Integer> list = new ArrayList();
+    List<Integer> list = new LinkedList<Integer>();
 
     /**
      *
@@ -39,6 +39,8 @@ public class PList {
     void find(int i) {
         if (list.contains(i)) {
             System.out.println("Found: " + i );
+        } else {
+            System.out.println(i + " is not found");
         }
     }
 
@@ -87,7 +89,7 @@ public class PList {
         //list that contains elements from range
         PList list2 = new PList();
         //rage
-        List<Integer> range = new ArrayList<Integer>();
+        List<Integer> range = new LinkedList<Integer>();
         for (int i = n; i <= m; i++) {
             range.add(i);
         }
