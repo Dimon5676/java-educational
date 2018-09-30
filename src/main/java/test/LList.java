@@ -23,7 +23,7 @@ public class LList<E> implements InterList<E> {
     public void addToEnd(E element) {
         Node<E> meow = new Node<E>(element, null);
         Node<E> temp = first;
-        for (int i = 0; i < size; i++) {
+        while (temp.next != null) {
             temp = temp.next;
         }
         temp.next = meow;
