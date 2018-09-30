@@ -9,7 +9,7 @@ public class Info {
         float r = 8.3f;
         int z = -116;
 
-        double t = Math.sin(Math.PI*r)/(Math.pow(10, 3)+r*z);
+        double t = Math.log(Math.abs(Math.PI*r))/(Math.pow(10, 3)+r*z);
 
         double numerator1 = Math.exp(5*t);
         double numerator2 = Math.exp(-5 * t);
