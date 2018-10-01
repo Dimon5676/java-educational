@@ -1,4 +1,4 @@
-package test;
+package avp.lab1;
 
 public class LList<E> implements InterList<E> {
     Node<E> first;

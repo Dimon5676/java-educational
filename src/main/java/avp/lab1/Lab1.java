@@ -1,8 +1,8 @@
-package test;
+package avp.lab1;
 
 import java.util.Scanner;
 
-public class Test {
+public class Lab1 {
     public static void main(String[] args) {
         LList<Integer> list = new LList<Integer>();
         Scanner scanner = new Scanner(System.in);

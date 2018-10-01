@@ -1,4 +1,4 @@
-package test;
+package avp.lab1;
 
 public interface InterList<E> {
     void addToBegin(E element);

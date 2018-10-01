@@ -3,7 +3,7 @@ package labs.lab1;
 import java.util.Date;
 
 /**
- * Test class for the first lab of programming course
+ * Lab1 class for the first lab of programming course
  * in Sevastopol State University
  */
 

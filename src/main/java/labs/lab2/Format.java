@@ -1,7 +1,7 @@
 package labs.lab2;
 
 /**
- * Test class for the second lab of programming course
+ * Lab1 class for the second lab of programming course
  * in Sevastopol State University
  */
 public class Format {
