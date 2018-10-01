@@ -83,6 +83,15 @@ public class LList<E> implements InterList<E> {
         }
     }
 
+    public void move(int k, int n) {
+        Node<E> temp = first;
+        for (int i = 0; i < k-1; i++) {
+            temp = temp.next;
+        }
+        removeFromN(k-1);
+        addToN(temp.element, k-1-n);
+    }
+
 
     private class  Node<E> {
         private E element;

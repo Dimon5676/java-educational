@@ -22,6 +22,7 @@ public class Test {
             System.out.println("5. Remove from n");
             System.out.println("6. Remove from end");
             System.out.println("7. Find");
+            System.out.println("8. Move k element on n position back");
             System.out.println("----------------------------");
             list.show();
             System.out.println("============================");
@@ -53,6 +54,10 @@ public class Test {
                 case 7:
                     System.out.println("Enter value to find");
                     list.find(scanner.nextInt());
+                    break;
+                case 8:
+                    System.out.println("Enter k element then n");
+                    list.move(scanner.nextInt(), scanner.nextInt());
                     break;
                 default:
                     System.out.println("Choose one option from the list and enter a number");

@@ -10,4 +10,5 @@ public interface InterList<E> {
     E get(int index);
     void show();
     void find(E element);
+    void move(int k, int n);
 }
