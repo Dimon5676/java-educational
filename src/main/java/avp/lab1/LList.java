@@ -12,7 +12,7 @@ public class LList<E> implements InterList<E> {
 
     public void addToN(E element, int n) {
         Node<E> temp = first;
-        for (int i = 0; i < n-1; i++) {
+        for (int i = 0; i < n-2; i++) {
             temp = temp.next;
         }
         Node<E> meow = new Node<E>(element, temp.next);
@@ -40,11 +40,15 @@ public class LList<E> implements InterList<E> {
     }
 
     public void removeFromN(int n) {
-        Node<E> temp = first;
-        for (int i = 0; i < n-1; i++) {
-            temp = temp.next;
+        if (n <= 1) {
+            removeFromBegin();
+        } else {
+            Node<E> temp = first;
+            for (int i = 0; i < n - 2; i++) {
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
         }
-        temp.next = temp.next.next;
         size--;
     }
 
@@ -57,12 +61,18 @@ public class LList<E> implements InterList<E> {
         size--;
     }
 
-    public E get(int index) {
+    public boolean contains(E e) {
+        boolean cont = false;
         Node<E> temp = first;
-        for (int i = 0; i < index; i++) {
+        while (temp.next != null) {
+            if (temp.element == e) {
+                cont = true;
+            } else {
+                cont = false;
+            }
             temp = temp.next;
         }
-        return temp.element;
+        return cont;
     }
 
     public void show() {
@@ -88,9 +98,31 @@ public class LList<E> implements InterList<E> {
         for (int i = 0; i < k-1; i++) {
             temp = temp.next;
         }
-        removeFromN(k-1);
-        addToN(temp.element, k-1-n);
+        removeFromN(k);
+        addToN(temp.element, k-n);
     }
+
+//    public void build(int from, int til) {
+//        LList<Integer> range = new LList<Integer>();
+//        LList<E> list1 = new LList<E>();
+//        LList<E> list2 = new LList<E>();
+//        for (int i = from; i <= til; i++) {
+//            range.addToEnd(i);
+//        }
+//        Node<E> temp = first;
+//        while (temp.next.next != null) {
+//            if (range.contains((Integer) temp.element)) {
+//                list1.addToEnd(temp.element);
+//            } else {
+//                list2.addToEnd(temp.element);
+//            }
+//            temp = temp.next;
+//        }
+//        System.out.println("List that contains range");
+//        list1.show();
+//        System.out.println("List that doesn't contain range");
+//        list2.show();
+//    }
 
 
     private class  Node<E> {

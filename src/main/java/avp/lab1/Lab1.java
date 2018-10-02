@@ -12,7 +12,6 @@ public class Lab1 {
         list.addToEnd(3);
         list.addToEnd(4);
         list.addToEnd(5);
-        list.show();
         while (true) {
             System.out.println("============================");
             System.out.println("1. Add to begin");
@@ -23,6 +22,7 @@ public class Lab1 {
             System.out.println("6. Remove from end");
             System.out.println("7. Find");
             System.out.println("8. Move k element on n position back");
+//            System.out.println("9. Build two lists from one");
             System.out.println("----------------------------");
             list.show();
             System.out.println("============================");
@@ -59,6 +59,10 @@ public class Lab1 {
                     System.out.println("Enter k element then n");
                     list.move(scanner.nextInt(), scanner.nextInt());
                     break;
+//                case 9:
+//                    System.out.println("Enter range");
+//                    list.build(scanner.nextInt(), scanner.nextInt());
+//                    break;
                 default:
                     System.out.println("Choose one option from the list and enter a number");
             }

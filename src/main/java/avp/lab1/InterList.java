@@ -7,8 +7,9 @@ public interface InterList<E> {
     void removeFromBegin();
     void removeFromN(int n);
     void removeFromEnd();
-    E get(int index);
+    boolean contains(E e);
     void show();
     void find(E element);
     void move(int k, int n);
+//    void build(int from, int til);
 }
