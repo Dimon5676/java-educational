@@ -21,6 +21,7 @@ public class Info {
 
         double m = 180 * Math.atan(temp);
 
+        System.out.println("t = " + t);
         System.out.println("m = " + m);
         System.out.println("Значение переменной а в формате IEEE 754: ");
         System.out.println(Long.toBinaryString(Double.doubleToLongBits(m)));
