@@ -27,6 +27,24 @@ public class LStack<E> implements InterStack<E> {
         size--;
     }
 
+    public void minToZero() {
+        int min = 1000000000;
+        Node<E> temp = top;
+        for (int i = 0; i < size; i++) {
+            if (Integer.valueOf(temp.element.toString()).compareTo(min)<0){
+                min = Integer.valueOf(temp.element.toString());
+            }
+            temp = temp.next;
+        }
+        temp = top;
+        for (int i = 0; i < size; i++) {
+            if (temp.element.equals(min)) {
+                temp.element = (E) "0";
+            }
+            temp = temp.next;
+        }
+    }
+
     public E pop(E e) {
         Node<E> temp = top;
         for (int i = 0; i < size; i++) {

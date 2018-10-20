@@ -11,6 +11,7 @@ public class Lab2 {
             System.out.println("1. Push to stack");
             System.out.println("2. Stack pop");
             System.out.println("3. Stack top");
+            System.out.println("4. Replace min with 0");
             System.out.println("----------------------------");
             stack.show();
             System.out.println("============================");
@@ -25,6 +26,9 @@ public class Lab2 {
                     break;
                 case 3:
                     System.out.println("Stack top: " + stack.top());
+                    break;
+                case 4:
+                    stack.minToZero();
                     break;
                 default:
                     System.out.println("Choose one option from the list and enter a number");
