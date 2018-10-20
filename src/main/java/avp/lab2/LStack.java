@@ -30,7 +30,7 @@ public class LStack<E> implements InterStack<E> {
     public E pop(E e) {
         Node<E> temp = top;
         for (int i = 0; i < size; i++) {
-            if (temp.element == e) {
+            if (temp.element.equals(e)) {
                 if ((i+1) == size) {
                     removeBottom();
                     return e;
