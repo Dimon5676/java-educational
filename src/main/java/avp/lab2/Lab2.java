@@ -2,67 +2,30 @@ package avp.lab2;
 
 import java.util.Scanner;
 
-public class Lab1 {
+public class Lab2 {
     public static void main(String[] args) {
-        LList<Integer> list = new LList<Integer>();
+        LStack<Integer> stack = new LStack<Integer>();
         Scanner scanner = new Scanner(System.in);
-        list.addToEnd(0);
-        list.addToEnd(1);
-        list.addToEnd(2);
-        list.addToEnd(3);
-        list.addToEnd(4);
-        list.addToEnd(5);
         while (true) {
             System.out.println("============================");
-            System.out.println("1. Add to begin");
-            System.out.println("2. Add to n");
-            System.out.println("3. Add to end");
-            System.out.println("4. Remove from begin");
-            System.out.println("5. Remove from n");
-            System.out.println("6. Remove from end");
-            System.out.println("7. Find");
-            System.out.println("8. Move k element on n position back");
-//            System.out.println("9. Build two lists from one");
+            System.out.println("1. Push to stack");
+            System.out.println("2. Stack pop");
+            System.out.println("3. Stack top");
             System.out.println("----------------------------");
-            list.show();
+            stack.show();
             System.out.println("============================");
             switch (scanner.nextInt()) {
                 case 1:
-                    System.out.println("Enter number to add to begin");
-                    list.addToBegin(scanner.nextInt());
+                    System.out.println("Enter number to add to stack");
+                    stack.push(scanner.nextInt());
                     break;
                 case 2:
-                    System.out.println("Enter number, then n");
-                    list.addToN(scanner.nextInt(), scanner.nextInt());
+                    System.out.print("Stack pop: ");
+                    System.out.println(stack.pop(scanner.nextInt()));
                     break;
                 case 3:
-                    System.out.println("Enter number to add to end");
-                    list.addToEnd(scanner.nextInt());
+                    System.out.println("Stack top: " + stack.top());
                     break;
-                case 4:
-                    System.out.println("Remove from begin");
-                    list.removeFromBegin();
-                    break;
-                case 5:
-                    System.out.println("Enter n to remove");
-                    list.removeFromN(scanner.nextInt());
-                    break;
-                case 6:
-                    System.out.println("Remove from end");
-                    list.removeFromEnd();
-                    break;
-                case 7:
-                    System.out.println("Enter value to find");
-                    list.find(scanner.nextInt());
-                    break;
-                case 8:
-                    System.out.println("Enter k element then n");
-                    list.move(scanner.nextInt(), scanner.nextInt());
-                    break;
-//                case 9:
-//                    System.out.println("Enter range");
-//                    list.build(scanner.nextInt(), scanner.nextInt());
-//                    break;
                 default:
                     System.out.println("Choose one option from the list and enter a number");
             }

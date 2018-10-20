@@ -1,15 +1,10 @@
 package avp.lab2;
 
-public interface InterList<E> {
-    void addToBegin(E element);
-    void addToN(E element, int n);
-    void addToEnd(E element);
-    void removeFromBegin();
-    void removeFromN(int n);
-    void removeFromEnd();
-    boolean contains(E e);
+public interface InterStack<E> {
     void show();
-    void find(E element);
-    void move(int k, int n);
-//    void build(int from, int til);
+    void push(E e);
+    void removeBottom();
+    E pop(E e);
+    E top();
+    boolean isEmpty();
 }
