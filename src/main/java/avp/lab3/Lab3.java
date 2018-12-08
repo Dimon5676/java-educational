@@ -46,25 +46,22 @@ public class Lab3 {
                 case 2:
                     System.out.println("Enter key to find:");
                     key = sc.nextInt();
-                    i = 0;
                     hash = myHash(key);
-                    if (a[hash] == null) {
-                        System.out.println("There is no such element");
+                    if (hash >= a.length) {
+                        System.out.println("Hash is out of range");
                         break;
                     }
-                    if (a[hash].key == key) {
-                        System.out.println("Found: Key: " + a[hash].key + " Data: " + a[hash].data);
-                        break;
-                    } else {
-                        while (a[hash].key != key) {
-                            hash = myHash(key) + (i*c + d*i*i + f*i);
-                            i++;
+                    for (hash = myHash(key), i = 0; hash < a.length; hash = myHash(key) + (i*c + d*i*i + f*i), i++) {
+                        if (a[hash] == null) {
+                            System.out.println("Item not found.");
+                            break;
                         }
                         if (a[hash].key == key) {
                             System.out.println("Found: Key: " + a[hash].key + " Data: " + a[hash].data);
                             break;
                         }
                     }
+                    break;
                 case 3:
                     System.out.println("Enter key to remove");
                     key = sc.nextInt();
