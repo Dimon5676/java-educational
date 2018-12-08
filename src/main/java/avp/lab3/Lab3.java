@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Lab3 {
 
     static private Scanner sc = new Scanner(System.in);
+    static private int size = 0;
 
     private static Data [] a = new Data[100];
     final static private int c = 1;
@@ -39,8 +40,10 @@ public class Lab3 {
                             i++;
                         }
                         a[hash] = new Data(key, data);
+                        size++;
                     } else {
                         a[hash] = new Data(key, data);
+                        size++;
                     }
                     break;
                 case 2:
@@ -73,6 +76,7 @@ public class Lab3 {
                     }
                     if (a[hash].key == key) {
                         a[hash] = null;
+                        size--;
                         break;
                     } else {
                         while (a[hash].key != key) {
@@ -81,6 +85,7 @@ public class Lab3 {
                         }
                         if (a[hash].key == key) {
                             a[hash] = null;
+                            size--;
                             break;
                         }
                     }
@@ -98,6 +103,7 @@ public class Lab3 {
 
     private static void display() {
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("Your hash table with " + size + " elements:");
         for (int i = 0; i < a.length; i++) {
             if (a[i] != null) {
                 System.out.println("Key: " + a[i].key + "\tData: " + a[i].data);
