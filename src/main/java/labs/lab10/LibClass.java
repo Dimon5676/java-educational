@@ -21,4 +21,11 @@ public class LibClass {
         }
         return sum;
     }
+
+    public static void display(int[] a) {
+        for (int i : a) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
 }
