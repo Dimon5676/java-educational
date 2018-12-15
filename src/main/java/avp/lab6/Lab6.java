@@ -1,3 +1,4 @@
+package avp.lab6;
 
 public class Lab6 {
 
