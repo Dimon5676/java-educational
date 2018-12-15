@@ -1,4 +1,4 @@
-package avp.lab2;
+package avp.lab3;
 
 public class LStack<E> implements InterStack<E> {
     private Node<E> top = null;

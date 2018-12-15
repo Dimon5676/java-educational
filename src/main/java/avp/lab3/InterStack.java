@@ -1,4 +1,4 @@
-package avp.lab2;
+package avp.lab3;
 
 public interface InterStack<E> {
     void show();

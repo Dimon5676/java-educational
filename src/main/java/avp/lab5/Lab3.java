@@ -1,4 +1,4 @@
-package avp.lab3;
+package avp.lab5;
 
 import java.util.Scanner;
 
