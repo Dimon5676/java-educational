@@ -26,19 +26,22 @@ public class Lab4 {
             rebro[0] = rand > rand2 ? rand : rand2;
             rebro[1] = rand > rand2 ? rand2 : rand;
 
-            while (rebroS.contains(rebro)) {
-                matrixInc[rand][i] = 0;
-                matrixInc[rand2][i] = 0;
-                rand = (int)(Math.random()*5);
-                matrixInc[rand][i] = (int)((Math.random()*99)+1);
-                rand2 = (int)(Math.random()*5);
-                while (rand == rand2) {
+            for (int j = 0; j < rebroS.size(); j++) {
+                int[] rebroL = rebroS.get(j);
+                if (rebroL[0] == rebro[0] && rebroL[1] == rebro[1]) {
+                    matrixInc[rand][i] = 0;
+                    matrixInc[rand2][i] = 0;
+                    rand = (int)(Math.random()*5);
+                    matrixInc[rand][i] = (int)((Math.random()*99)+1);
                     rand2 = (int)(Math.random()*5);
+                    while (rand == rand2) {
+                        rand2 = (int)(Math.random()*5);
+                    }
+                    matrixInc[rand2][i] = -matrixInc[rand][i];
+                    rebro = new int[2];
+                    rebro[0] = rand > rand2 ? rand : rand2;
+                    rebro[1] = rand > rand2 ? rand2 : rand;
                 }
-                matrixInc[rand2][i] = -matrixInc[rand][i];
-                rebro = new int[2];
-                rebro[0] = rand > rand2 ? rand : rand2;
-                rebro[1] = rand > rand2 ? rand2 : rand;
             }
 
             rebroS.add(rebro);
