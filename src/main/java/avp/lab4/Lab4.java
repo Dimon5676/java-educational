@@ -2,8 +2,6 @@ package avp.lab4;
 
 public class Lab4 {
 
-
-
     public static void main(String[] args) {
         new Lab4();
     }
@@ -19,7 +17,7 @@ public class Lab4 {
             while (rand == rand2) {
                 rand2 = (int)(Math.random()*5);
             }
-            matrixInc[rand2][i] = matrixInc[rand][i];
+            matrixInc[rand2][i] = -matrixInc[rand][i];
         }
 
         //Выврд матрицы инцидетности
@@ -33,25 +31,25 @@ public class Lab4 {
         int[][] matrixSme = new int[matrixInc.length][matrixInc.length];
 
         //Преобразование матрицы инцидентности в матрицу смежности
-        int first = 0;
-        int second = 0;
+        int from = 0;
+        int to = 0;
         int val = 0;
 
         for (int i = 0; i < matrixInc[0].length; i++) {
             for (int j = 0; j < matrixInc.length; j++) {
                 if (matrixInc[j][i] != 0) {
-                    if (first == 0) {
-                        first = j;
+                    if (matrixInc[j][i] > 0) {
+                        from = j;
                         val = matrixInc[j][i];
-                    } else {
-                        second = j;
+                    }
+                    if (matrixInc[j][i] < 0) {
+                        to = j;
                     }
                 }
             }
-            matrixSme[first][second] = val;
-            matrixSme[second][first] = val;
-            first = 0;
-            second = 0;
+            matrixSme[from][to] = val;
+            from = 0;
+            to = 0;
         }
 
         //Вывод матрицы смежности
