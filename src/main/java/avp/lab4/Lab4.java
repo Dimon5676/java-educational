@@ -1,5 +1,7 @@
 package avp.lab4;
 
+import java.util.ArrayList;
+
 public class Lab4 {
 
     public static void main(String[] args) {
@@ -10,6 +12,7 @@ public class Lab4 {
         //Создание и заполнение матрицы инцидентности случайными значениями
         int[][] matrixInc = new int[5][10];
 
+        ArrayList<int[]> rebroS = new ArrayList<int[]>();
         for (int i = 0; i < matrixInc[0].length; i++) {
             int rand = (int)(Math.random()*5);
             matrixInc[rand][i] = (int)((Math.random()*99)+1);
@@ -18,6 +21,31 @@ public class Lab4 {
                 rand2 = (int)(Math.random()*5);
             }
             matrixInc[rand2][i] = -matrixInc[rand][i];
+
+            int[] rebro = new int[2];
+            rebro[0] = rand > rand2 ? rand : rand2;
+            rebro[1] = rand > rand2 ? rand2 : rand;
+
+            while (rebroS.contains(rebro)) {
+                matrixInc[rand][i] = 0;
+                matrixInc[rand2][i] = 0;
+                rand = (int)(Math.random()*5);
+                matrixInc[rand][i] = (int)((Math.random()*99)+1);
+                rand2 = (int)(Math.random()*5);
+                while (rand == rand2) {
+                    rand2 = (int)(Math.random()*5);
+                }
+                matrixInc[rand2][i] = -matrixInc[rand][i];
+                rebro = new int[2];
+                rebro[0] = rand > rand2 ? rand : rand2;
+                rebro[1] = rand > rand2 ? rand2 : rand;
+            }
+
+            rebroS.add(rebro);
+        }
+
+        for (int i = 0; i < rebroS.size(); i++) {
+            System.out.println(rebroS.get(i)[0] + " " + rebroS.get(i)[1]);
         }
 
         //Выврд матрицы инцидетности
