@@ -12,7 +12,7 @@ public class Lab4 {
         //Создание и заполнение матрицы инцидентности случайными значениями
         int[][] matrixInc = new int[5][10];
 
-        ArrayList<int[]> rebroS = new ArrayList<int[]>();
+        ArrayList<String> rebroS = new ArrayList<String>();
         for (int i = 0; i < matrixInc[0].length; i++) {
             int rand = (int)(Math.random()*5);
             matrixInc[rand][i] = (int)((Math.random()*99)+1);
@@ -22,33 +22,27 @@ public class Lab4 {
             }
             matrixInc[rand2][i] = -matrixInc[rand][i];
 
-            int[] rebro = new int[2];
-            rebro[0] = rand > rand2 ? rand : rand2;
-            rebro[1] = rand > rand2 ? rand2 : rand;
-
-            for (int j = 0; j < rebroS.size(); j++) {
-                int[] rebroL = rebroS.get(j);
-                if (rebroL[0] == rebro[0] && rebroL[1] == rebro[1]) {
-                    matrixInc[rand][i] = 0;
-                    matrixInc[rand2][i] = 0;
-                    rand = (int)(Math.random()*5);
-                    matrixInc[rand][i] = (int)((Math.random()*99)+1);
-                    rand2 = (int)(Math.random()*5);
-                    while (rand == rand2) {
-                        rand2 = (int)(Math.random()*5);
-                    }
-                    matrixInc[rand2][i] = -matrixInc[rand][i];
-                    rebro = new int[2];
-                    rebro[0] = rand > rand2 ? rand : rand2;
-                    rebro[1] = rand > rand2 ? rand2 : rand;
-                }
+            if (i == 0) {
+                rebroS.add(String.valueOf(rand) + rand2);
             }
 
-            rebroS.add(rebro);
+            while (rebroS.contains(String.valueOf(rand) + rand2)) {
+                matrixInc[rand][i] = 0;
+                matrixInc[rand2][i] = 0;
+                rand = (int)(Math.random()*5);
+                matrixInc[rand][i] = (int)((Math.random()*99)+1);
+                rand2 = (int)(Math.random()*5);
+                while (rand == rand2) {
+                    rand2 = (int)(Math.random()*5);
+                }
+                matrixInc[rand2][i] = -matrixInc[rand][i];
+            }
+
+            rebroS.add(String.valueOf(rand) + rand2);
         }
 
         for (int i = 0; i < rebroS.size(); i++) {
-            System.out.println(rebroS.get(i)[0] + " " + rebroS.get(i)[1]);
+            System.out.println(rebroS.get(i));
         }
 
         //Выврд матрицы инцидетности
