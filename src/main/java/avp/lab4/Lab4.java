@@ -40,7 +40,7 @@ public class Lab4 {
 
             rebroS.add(String.valueOf(rand) + rand2);
         }
-        
+
 
         //Выврд матрицы инцидетности
         System.out.println("Матрица инцидентности:");
