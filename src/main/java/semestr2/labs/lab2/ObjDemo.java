@@ -1,7 +1,8 @@
 package semestr2.labs.lab2;
 
-        import java.util.Date;
+import java.util.Date;
 
+@SuppressWarnings("Duplicates")
 public class ObjDemo {
     public static void bubbleSort (Comparable[ ] arr) {
         boolean flag;
@@ -123,8 +124,7 @@ public class ObjDemo {
             System.out.printf("Объект %s\n", tr6);
             System.out.println("соответствует объекту");
             System.out.println(trip2);
-        }
-        else{
+        } else {
             System.out.printf("Объект %s\n", tr6);
             System.out.println("не соответствует объекту");
             System.out.println(trip2);
