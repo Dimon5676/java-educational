@@ -1,26 +1,23 @@
 package practice.first;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class DemoSet {
     public static void main(String[] args) {
         //Создание 2х кинотеатров
         CinemaSet cinema1 = new CinemaSet("Первый кинотеатр");
         CinemaSet cinema2 = new CinemaSet("Второй кинотеатр");
         //Заполнение кинотеатров фильмами (по 5 в каждый)
-        cinema1.addFilm(new Film(1, "Film1", "2000", 3.7));
-        cinema1.addFilm(new Film(2, "Some Film2", "1999", 4.5));
-        cinema1.addFilm(new Film(3, "Film3", "2002", 1.3));
-        cinema1.addFilm(new Film(4, "Some Film", "1991", 6.4));
-        cinema1.addFilm(new Film(5, "Some interesting film", "1987", 3.7));
-
-        cinema2.addFilm(new Film(1, "Some Film1", "1841", 3.7));
-        cinema2.addFilm(new Film(2, "Film2", "5102", 4.5));
-        cinema2.addFilm(new Film(3, "Some Film3", "2007", 1.3));
-        cinema2.addFilm(new Film(4, "Film4", "1999", 6.4));
-        cinema2.addFilm(new Film(5, "Some Film5", "1987", 3.7));
+        fillCinemas(cinema1, cinema2);
         //Выборка данных
         //Вывод с естественным порядком сортировки
         System.out.println("Кинотеатр (c естественным порядком сортировки)");
         cinema1.display();
+        System.out.println();
+        System.out.println("Кинотеатр (c естественным порядком сортировки)");
+        cinema2.display();
         System.out.println();
         //Пытаемся вставить фильс с уже существующим id
         System.out.println("Попытка добавить фильм с существующим id");
@@ -106,5 +103,28 @@ public class DemoSet {
         System.out.println("Вычитание");
         cinema2.substraction(cinema1).display();
         System.out.println();
+    }
+
+    private static void fillCinemas(CinemaSet cinema1, CinemaSet cinema2) {
+        Scanner sc = null;
+        try {
+            sc = new Scanner(new File("Input.txt"));
+            while (sc.hasNext()) {
+                String filmStr = sc.nextLine();
+                String[] filmArr = filmStr.split(",");
+                int id = Integer.valueOf(filmArr[0]);
+                String name = filmArr[1];
+                String year = filmArr[2].substring(2, filmArr[2].length()-1);
+                double budget = Double.valueOf(filmArr[3]);
+                if (cinema1.getNumberOfFilms() < 5) {
+                    cinema1.addFilm(new Film(id, name, year, budget));
+                }
+                if (cinema2.getNumberOfFilms() < 5) {
+                    cinema2.addFilm(new Film(id, name, year, budget));
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
