@@ -1,8 +1,5 @@
 package practice.first;
 
-import semestr2.labs.lab3.Cinema;
-
-import java.lang.ref.SoftReference;
 import java.util.*;
 
 public class CinemaSet {
@@ -157,6 +154,7 @@ public class CinemaSet {
     //Обновление id фильма
     public boolean update(int id, int newId) {
         if (getFilmById(newId) != null) return false;
+        if (getFilmById(id) == null) return false;
         getFilmById(id).setId(newId);
         return true;
     }

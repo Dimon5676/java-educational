@@ -135,6 +135,7 @@ public class CinemaList {
     //Обновление id фильма
     public boolean update(int id, int newId) {
         if (getFilmById(newId) != null) return false;
+        if (getFilmById(id) == null) return false;
         getFilmById(id).setId(newId);
         return true;
     }
