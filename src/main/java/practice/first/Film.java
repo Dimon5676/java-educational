@@ -2,7 +2,7 @@ package practice.first;
 
 public class Film implements Comparable<Film> {
     //Константы
-    private static String FILM = "Фильм: id:%d, название: %s, год: %s, бюджет: %.2f";
+    private final static String FILM = "Фильм: id:%d, название: %s, год: %s, бюджет: %.2f";
     //Поля
     private int id;
     private String name;

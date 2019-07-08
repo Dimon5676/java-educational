@@ -4,7 +4,7 @@ import java.util.*;
 
 public class CinemaList {
     //Поля
-    private String CINEMA = "Кинотеатр: %s, кол-во фильмов: %d";
+    private final String CINEMA = "Кинотеатр: %s, кол-во фильмов: %d";
 
     private String name;
     private List<Film> films;

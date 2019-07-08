@@ -114,7 +114,7 @@ public class DemoSet {
                 String[] filmArr = filmStr.split(",");
                 int id = Integer.valueOf(filmArr[0]);
                 String name = filmArr[1];
-                String year = filmArr[2].substring(2, filmArr[2].length()-1);
+                String year = filmArr[2];
                 double budget = Double.valueOf(filmArr[3]);
                 if (cinema1.getNumberOfFilms() < 5) {
                     cinema1.addFilm(new Film(id, name, year, budget));
