@@ -1,8 +1,5 @@
 package practice.second;
 
-import practice.first.CinemaList;
-import practice.first.Film;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
