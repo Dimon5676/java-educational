@@ -30,7 +30,7 @@ public class DemoSet {
         System.out.println("Кинотеатр (с сортировкой по убыванию бюджета)");
         cinema1.sortDesc().display();
         System.out.println();
-        System.out.println("Кинотеатр (с сортировкой по убыванию бюджета и убыванию года)");
+        System.out.println("Кинотеатр (с сортировкой по убыванию бюджета и убыванию года) с бюджетом от 4.4 до 7.31");
         cinema1.getBetween(4.4, 7.31).sortDescTwo().display();
         System.out.println();
         //Удаление фмльма по id
@@ -74,7 +74,7 @@ public class DemoSet {
         cinema1.getAboveAver().display();
         System.out.println();
         //Обновлене id у фильма с id 2
-        System.out.println("Обновлене id у фильма с id 2");
+        System.out.println("Обновлене id у фильма с id 2 на id 7");
         cinema2.update(2, 7);
         //Вывод фильмов после обновления id
         System.out.println("Вывод фильмов после обновления id");
@@ -111,7 +111,7 @@ public class DemoSet {
             sc = new Scanner(new File("Input.txt"));
             while (sc.hasNext()) {
                 String filmStr = sc.nextLine();
-                String[] filmArr = filmStr.split(",");
+                String[] filmArr = filmStr.split(", ");
                 int id = Integer.valueOf(filmArr[0]);
                 String name = filmArr[1];
                 String year = filmArr[2];

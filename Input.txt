@@ -1,8 +1,8 @@
-1, "Film1", 2000, 3.7
+1, "Film1", 2000, 3.71
 2, "Some Film2", 1999, 4.5
 3, "Film3", 2002, 1.3
 4, "Some Film", 1991, 6.4
-5, "Some interesting film", "987, 3.7
+5, "Some interesting film", 1987, 3.7
 1, "Some Film1", 1841, 3.7
 2, "Film2", 5102, 4.5
 3, "Some Film3", 2007, 1.3

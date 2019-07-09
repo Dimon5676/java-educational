@@ -127,7 +127,7 @@ public class DemoList {
             sc = new Scanner(new File("Input.txt"));
             while (sc.hasNext()) {
                 String filmStr = sc.nextLine();
-                String[] filmArr = filmStr.split(",");
+                String[] filmArr = filmStr.split(", ");
                 int id = Integer.valueOf(filmArr[0]);
                 String name = filmArr[1];
                 String year = filmArr[2];
